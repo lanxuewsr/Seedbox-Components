@@ -26,13 +26,13 @@ if [ ! -f /usr/src/linux-headers-$(uname -r)/.config ]; then
 fi
 
 #BBRx
-wget -O $HOME/tcp_bbrx.c https://raw.githubusercontent.com/guowanghushifu/Seedbox-Components/main/BBR/BBRx/tcp_bbrx-v2.c
-if [ ! -f $HOME/tcp_bbrx.c ]; then
+wget -O $HOME/tcp_bbrx2.c https://github.com/lanxuewsr/Seedbox-Components/raw/refs/heads/main/BBR/BBRx/tcp_bbrx2.c
+if [ ! -f $HOME/tcp_bbrx2.c ]; then
 	echo "Error: Download failed! Exiting." >&2
 	exit 1
 fi
-kernel_ver=6.6.26
-algo=bbrx
+kernel_ver=6.1.0
+algo=bbrx2
 
 # Compile and install
 bbr_file=tcp_$algo
