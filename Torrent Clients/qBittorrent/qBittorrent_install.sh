@@ -228,10 +228,10 @@ Description=qBittorrent
 After=network.target
 
 [Service]
-Type=forking
+Type=exec
 User=$username
 LimitNOFILE=infinity
-ExecStart=/usr/bin/qbittorrent-nox -d
+ExecStart=/usr/bin/qbittorrent-nox
 ExecStop=/usr/bin/killall -w -s 9 /usr/bin/qbittorrent-nox
 Restart=on-failure
 TimeoutStopSec=20
